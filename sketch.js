@@ -24,9 +24,9 @@ function setup(){
   boy.addAnimation("boyimage", boyImg)
   boy.scale = 0.1
   leftBoundary = createSprite(28, 300, 50, 600)
-  leftBoundary.visible = true
+  leftBoundary.visible = false
   rightBoundary = createSprite(374, 300, 50, 600)
-  rightBoundary.visible = true
+  rightBoundary.visible = false
   edges = createEdgeSprites()
 
   
@@ -36,12 +36,11 @@ function draw() {
   
   background(0);
   boy.x = mouseX
-  drawSprites()
   boy.collide(leftBoundary);
   boy.collide(rightBoundary);
   if (path.y > 600) {
     path.y = height/2
   }
   boy.collide(edges[3])
-
+drawSprites()
 }
